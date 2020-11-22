@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>Diversity Analyzer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+</head>
+<body>
+
+<section class="page-header">
+      <h1 class="project-name" align=center>ImmunoTools</h1>
+      <h2 class="project-tagline" align=center>Tools for immunoinformatics analysis of Rep-seq data</h2>
+      <a href="https://github.com/Immunotools/immunotools" class="btn"><b>View on GitHub</b></a>
+      <a href="https://github.com/Immunotools/immunotools/zipball/master" class="btn"><b>Download .zip</b></a>
+      <a href="https://github.com/Immunotools/immunotools/tarball/master" class="btn"><b>Download .tar.gz</b></a>
+    </section>
+
+<section class="main-content">
+    <h2>Immunotools</h2>
+    <ul>
+        <li><a href = diversity_analyzer.html>Diversity Analyzer</a> is a tool for annotation and diversity analysis of full-length adaptive immune repertoires (antibodies or TCRs).</li>
+        <li><a href = ig_evolution.html>IgEvolution</a>, a tool for clonal analysis of antibody repertoires using immunosequencing data.</li>
+        <li>IgScout, a tool for <i>de novo</i> inference of immunoglobulin D genes and finding CDR3s with tandem fusion of D-D genes</li>
+    </ul>
+
+    <p align = "justify">
+        Installation instructions are described in <a href = immunotools_manual.html>the manual</a>.
+    </p>
+
+    <h2>Diversity Analyzer</h2>
+    <p align = "justify">
+        Diversity Analyzer takes full-length sequences of adaptive immune receptors as an input.
+        Tool expects that input sequences cover entire variable regions of antibody or TCR: from the start of V segment to the end of J segment.
+        Tool is able to process raw Rep-seq libraries, as well as constructed repertoires.
+    </p>
+
+    <p align = "justify">
+        To launch DiversityAnalyzer, type:
+    </p>
+    <p>
+        <code>
+            ./diversity_analyzer.py -i INPUT_FILE -o DIVERSITY_ANALYZER_DIR -l LOCUS
+        </code>
+    </p>
+
+    <ul>
+        <li><b>INPUT_FILE:</b> input sequences of adaptive immune receptors in FASTA/FASTQ format;</li>
+        <li><b>DIVERSITY_ANALYZER_DIR:</b> output directory of Diversity Analyzer.
+            Please note that DiversityAnalyzer checks the existence of DIVERSITY_ANALYZER_DIR,
+            <b>removes it if it exists</b>,
+            and creates an empty directory with name DIVERSITY_ANALYZER_DIR.
+            So, we recommend not to specify an existing directory (e.g., the home directory) as DIVERSITY_ANALYZER_DIR!</li>
+        <li><b>LOCUS:</b> name of IG / TR locus that will be used for alignment. Possible values: ALL / IG / IGH / IGK / IGL / TR / TRA / TRB / TRG / TRD.
+    </ul>
+
+    <p>
+        For further details, please visit <a href = diversity_analyzer.html>Diversity Analyzer page</a>.
+    </p>
+
+    <h2>IgEvolution</h2>
+    <p align = "justify">
+        IgEvolution performs simultaneous repertoire and clonal tree reconstruction of a Rep-seq library taken from an antibody repertoire.
+        To run IgEvolution, first run DiversityAnalyzer and then provide the resulting output directory as an input:
+    </p>
+    <p>
+        <code>
+            ./ig_evolution.py -i DIVERSITY_ANALYZER_DIR -o IGEVOLUTION_DIR
+        </code>
+    <p>
+
+    <ul>
+        <li><b>DIVERSITY_ANALYZER_DIR:</b> output directory of Diversity Analyzer.
+        IgEvolution uses the results of VJ and CDR labeling of a Rep-seq library.</li>
+        <li><b>IGEVOLUTION_DIR:</b> output directory of IgEvolution.</li>
+    </ul>
+
+    <p>
+        For further details, please visit <a href = ig_evolution.html>IgEvolution page</a>.
+    </p>
+
+    <h2>IgScout</h2>
+    <p align = "justify">
+        IgScout performs <i>de novo</i> inference of immunoglobulin D (diversity genes) using Rep-seq data,
+        computes usage of D genes, and identifies CDR3s with tandem fusion of D-D genes.
+        IgScout takes CDR3 sequences in FASTA format as an input and reports candidates for inferred D genes:
+    </p>
+    <p align = justify>
+        <code>
+            python igscout.py -i cdr3s.fasta -o IGSCOUT_OUTPUT_DIR
+        </code>
+    </p>
+
+    <p  align = justify>
+        For further details, please look at <a href = ../immunotools_manual.html#igscout_usage>the manual</a>.
+    </p>
+
+    <h2 id = "citation">Citation and feedback</h2>
+    <ul>
+        <li>If you use <b>DiversityAnalyzer</b> in your research, please cite:
+            Shlemov A, Bankevich S, Bzikadze A, Turchaninova MA, Safonova Y, Pevzner PA.
+            Reconstructing Antibody Repertoires from Error-Prone Immunosequencing Reads.
+            <i>J Immunol</i>. 2017 Nov 1;199(9):3369-3380.
+        </li>
+        <li>
+            If you use <b>IgEvolution</b>, please cite:
+            Yana Safonova and Pavel A. Pevzner. 
+            IgEvolution: clonal analysis of antibody repertoires. 
+            bioRxiv 725424; doi: https://doi.org/10.1101/725424.
+        </li>
+        <li>If you use <b>IgScout</b>, please cite:
+            Yana Safonova and Pavel A. Pevzner.
+            De novo inference of diversity genes and analysis of non-canonical V(DD)J recombination in immunoglobulins.
+            <i>Front Immunol</i>. 2019. 10:987.
+        </li>
+    </ul>
+
+    <p align = "justify">
+       If you have any questions or troubles with running ImmunoTools, please contact <a href = "mailto:safonova.yana@gmail.com">Yana Safonova</a>.
+        We also will be happy to hear your suggestions about improvement of our tools!
+    </p>
+
+    <hr>
+    <!------------------------------------------------------------------------>
+</section>

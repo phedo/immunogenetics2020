@@ -1,0 +1,24 @@
+General characteristics of naive cells
+IGH	IGK	IGL
+# sequences	1000	0	0
+# productive sequences	969	0	0
+# sequences with stop codon	27	0	0
+# out-of-frame sequences	14	0	0
+
+
+General characteristics of plasma cell
+IGH	IGK	IGL
+# sequences	1000	0	0
+# productive sequences	968	0	0
+# sequences with stop codon	31	0	0
+# out-of-frame sequences	7	0	0
+
+
+General characteristics of memory cell
+IGH	IGK	IGL
+# sequences	1000	0	0
+# productive sequences	922	0	0
+# sequences with stop codon	76	0	0
+# out-of-frame sequences	14	0	0
+
+

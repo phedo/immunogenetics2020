@@ -1,0 +1,29 @@
+ImmunoTools package includes the following tools:
+- DiversityAnalyzer: a tool for basic processing immunosequencing (Rep-seq) data: V & J alignment, finding FRs / CDRs, and finding SHMs
+- IgEvolution: a tool for clonal analysis of antibody repertoires using immunosequencing data
+- IgScout: a tool for de novo inference of D (diversity genes) using Rep-seq data
+- Tandem CDR3 Finder: a tool for computing usage of D genes and finding CDR3s with tandem fusion of D-D genes 
+
+Usage:
+./diversity_analyzer.py -i rep_seq_library.fastq -o diversity_analyzer_output_dir -l LOCUS --org ORGANISM
+
+./ig_evolution.py -i diversity_analyzer_output_dir -o igevolution_output_dir
+
+python igscout.py -i cdr3s.fasta -o igscout_output_dir -v V_genes.fasta -j J_genes.fasta
+python igscout_analyzer.py igscout_output_dir/inferred_segments.fasta known_D_genes.fasta output_annotation_dir
+python tandem_cdr3_finder.py IGHD.fa cdr3s.fasta tandem_finder_output_dir
+
+Installation instructions and manual can be found on the website:
+https://immunotools.github.io/immunotools/
+
+Current contributors:
+    Yana Safonova,
+    Andrey Bzikadze,
+    Vinnu Bhardwaj,
+    Pavel A. Pevzner
+
+References:
+
+- Yana Safonova and Pavel A. Pevzner. IgEvolution: clonal analysis of antibody repertoires. bioRxiv 725424; doi: https://doi.org/10.1101/725424
+
+- Yana Safonova and Pavel Pevzner. De novo inference of diversity genes and analysis of non-canonical V(DD)J recombination in immunoglobulins. Front. Immunol. | doi: 10.3389/fimmu.2019.00987

@@ -1,0 +1,25 @@
+
+IGHV1-2*06      caggtgcagctggtgcagtctggggctgaggtgaagaagcctggggcctcagtgaaggtc	60
+IGHV1-2*02      caggtgcagctggtgcagtctggggctgaggtgaagaagcctggggcctcagtgaaggtc	60
+IGHV1-2*04      caggtgcagctggtgcagtctggggctgaggtgaagaagcctggggcctcagtgaaggtc	60
+                ************************************************************
+
+IGHV1-2*06      tcctgcaaggcttctggatacaccttcaccggctactatatgcactgggtgcgacaggcc	120
+IGHV1-2*02      tcctgcaaggcttctggatacaccttcaccggctactatatgcactgggtgcgacaggcc	120
+IGHV1-2*04      tcctgcaaggcttctggatacaccttcaccggctactatatgcactgggtgcgacaggcc	120
+                ************************************************************
+
+IGHV1-2*06      cctggacaagggcttgagtggatgggacggatcaaccctaacagtggtggcacaaactat	180
+IGHV1-2*02      cctggacaagggcttgagtggatgggatggatcaaccctaacagtggtggcacaaactat	180
+IGHV1-2*04      cctggacaagggcttgagtggatgggatggatcaaccctaacagtggtggcacaaactat	180
+                *************************** ********************************
+
+IGHV1-2*06      gcacagaagtttcagggcagggtcaccatgaccagggacacgtccatcagcacagcctac	240
+IGHV1-2*02      gcacagaagtttcagggcagggtcaccatgaccagggacacgtccatcagcacagcctac	240
+IGHV1-2*04      gcacagaagtttcagggctgggtcaccatgaccagggacacgtccatcagcacagcctac	240
+                ****************** *****************************************
+
+IGHV1-2*06      atggagctgagcaggctgagatctgacgacacggccgtgtattactgtgcgagaga	296
+IGHV1-2*02      atggagctgagcaggctgagatctgacgacacggccgtgtattactgtgcgagaga	296
+IGHV1-2*04      atggagctgagcaggctgagatctgacgacacggccgtgtattactgtgcgagaga	296
+                ********************************************************
